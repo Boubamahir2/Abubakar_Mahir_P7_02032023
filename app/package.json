@@ -9,7 +9,8 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.1",
     "react-scripts": "5.0.1",
-    "react-star-rating": "^1.4.2"
+    "react-star-rating": "^1.4.2",
+    "sass": "^1.62.1"
   },
   "scripts": {
     "start": "react-scripts start",
