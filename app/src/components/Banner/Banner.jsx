@@ -1,26 +1,26 @@
 import React from 'react'
 import banner from '../../assets/banner.png';
 import bannerAbout from '../../assets/BannerAbout.png';
-import styles from './banner.module.css';
+import './banner.css';
 function Banner(props) {
   return (
-    <div className={styles.banner}>
+    <div className="banner">
       {props.origin === 'home' ? (
         <>
           <img
-            className={styles.banner_img}
+            className="banner_img"
             src={banner}
             alt='Bannière paysage'
           />
           <div>
-            <h1 className={styles.banner_title}>
+            <h1 className="banner_title">
               Chez vous, partout et ailleurs
             </h1>
           </div>
         </>
       ) : props.origin === 'about' ? (
         <img
-          className={styles.banner_about_img}
+          className="banner_about_img"
           src={bannerAbout}
           alt='Bannière paysage'
         />
