@@ -3,6 +3,8 @@ import Banner from '../../components/Banner/Banner';
 import Footer from '../../components/Footer/Footer';
 import Dropdown from '../../components/Dropdown/Dropdown'
 import data from '../../components/Dropdown/data.json';
+import  '../../components/Dropdown/Dropdown.css';
+
 
 const About = () => {
   return (

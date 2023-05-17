@@ -1,0 +1,19 @@
+.mainDropdown {
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  margin-bottom: 50px;
+}
+
+.dropdown {
+  margin-bottom: 25px;
+}
+
+.dropdown_title_arrow {
+  display: flex;
+  justify-content: space-between;
+  background-color: #FF6060;
+  padding: 5px;
+  height: 50px;
+  align-items: center;
+}
