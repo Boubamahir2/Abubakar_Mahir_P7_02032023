@@ -12,8 +12,8 @@ const Home = () => {
       <main>
         <Banner origin='home' />
         <section className='section_card'>
-          {data.map((element) => (
-            <Card key={element.id} element={element} />
+          {data.map((item) => (
+            <Card key={item.id} item={item} />
           ))}
         </section>
       </main>
