@@ -3,6 +3,7 @@ import Header from '../../components/Header/Header';
 import Banner from '../../components/Banner/Banner';
 import Gallery from '../../components/Gallary/Gallery';
 import Footer from '../../components/Footer/Footer';
+import data from '../../data/restaurantsData.json'
 
 const Home = () => {
   return (
@@ -10,11 +11,11 @@ const Home = () => {
       <Header origin='home' />
       <main>
         <Banner origin='home' />
-        {/* <section className={styles.section_card}>
-          {Properties.map((element) => (
+        <section className='section_card'>
+          {data.map((element) => (
             <Gallery key={element.id} element={element} />
           ))}
-        </section> */}
+        </section>
       </main>
       <Footer />
     </div>
