@@ -11,30 +11,48 @@ import {Profile,
 
 const Lodging = () => {
   const {id} = useParams();
-  const filteredLodging = data.filter(lodging => lodging.id === id);
-   const { title, location, tags, host, rating, description, equipment } =
-     filteredLodging || {};
+  const filteredLodging = data.find(lodging => lodging.id === id);
+   const { title, location, tags, host, rating, description, equipments } =
+     filteredLodging ;
    if (!filteredLodging) return <NotFound />;
   return (
     <>
       <Header origin='home' />
       <Carousel />
-      <div className='section_details}>
-        <div className='section_details_property}>
-          <h1 className='property_title}>{title}</h1>
-          <p className='property_location}>{location}</p>
+      <div className='section_details'>
+        <div className='section_details_property'>
+          <h1 className='property_title'>{title}</h1>
+          <p className='property_location'>{location}</p>
           <HostTag tags={tags} />
         </div>
-        <div className='section_details_host}>
-          <div className='host}>
-            <HostProfile host={host} />
+        <div className='section_details_host'>
+          <div className='host'>
+            <Profile host={host} />
             <div>
-              <Rating className='host_rating} rating={rating} />
+              <Ratings className='host_rating' rating={rating} />
             </div>
           </div>
         </div>
       </div>
-
+      <section className='dropdown_property'>
+        <div className='dropdown_property_banner'>
+          <Dropdown
+            className='dropdown_property_title'
+            key={filteredLodging.id}
+            title='Description'
+            text_content={description}
+          ></Dropdown>
+        </div>
+        <div className='dropdown_property_banner'>
+          <Dropdown
+            title='Equipements'
+            className='dropdown_property_title'
+            text_content={equipments?.map((equipment, index) => (
+              <li key={index}>{equipment}</li>
+            ))}
+          ></Dropdown>
+        </div>
+      </section>
       <Footer />
     </>
   );
