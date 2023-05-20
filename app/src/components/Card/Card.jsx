@@ -4,7 +4,7 @@ import './Card.css'
 const Card = ({item}) => {
    const navigate = useNavigate();
    const handleCardClick = () => {
-     navigate(`/appartment/${item.id}`);
+     navigate(`/lodging/${item.id}`);
    };
   return (
     <article className="card" onClick={handleCardClick}>

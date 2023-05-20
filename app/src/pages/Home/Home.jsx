@@ -1,8 +1,8 @@
-import React from 'react'
+
 import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 import Banner from '../../components/Banner/Banner';
 import Card from '../../components/Card/Card';
-import Footer from '../../components/Footer/Footer';
 import data from '../../data/restaurantsData.json'
 import './home.css'
 
