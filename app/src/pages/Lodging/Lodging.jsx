@@ -4,6 +4,10 @@ import Carousel from '../../components/Carousel/Carousel';
 import { useParams } from 'react-router-dom';
 import data from '../../data/restaurantsData.json'
 import NotFound from '../NotFound/NotFound';
+import Dropdown from '../../components/Dropdown/Dropdown';
+import {Profile,
+  Ratings,
+  HostTag} from '../../components/Profile&Ratings'
 
 const Lodging = () => {
   const {id} = useParams();
@@ -14,9 +18,24 @@ const Lodging = () => {
   return (
     <>
       <Header origin='home' />
-      <Carousel/>
+      <Carousel />
+      <div className='section_details}>
+        <div className='section_details_property}>
+          <h1 className='property_title}>{title}</h1>
+          <p className='property_location}>{location}</p>
+          <HostTag tags={tags} />
+        </div>
+        <div className='section_details_host}>
+          <div className='host}>
+            <HostProfile host={host} />
+            <div>
+              <Rating className='host_rating} rating={rating} />
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <Footer/>
+      <Footer />
     </>
   );
 };
