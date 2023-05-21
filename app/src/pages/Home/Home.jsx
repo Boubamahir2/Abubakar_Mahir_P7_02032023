@@ -8,9 +8,9 @@ import './home.css'
 
 const Home = () => {
   return (
-    <div>
+    <div className="container-home">
       <Header origin='home' />
-      <main>
+      <main className='main-container'>
         <Banner origin='home' />
         <section className='section_card'>
           {data.map((item) => (
