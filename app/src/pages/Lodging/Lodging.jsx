@@ -13,9 +13,9 @@ import {Profile,
 const Lodging = () => {
   const {id} = useParams();
   const filteredLodging = data.find(lodging => lodging.id === id);
+  if (!filteredLodging) return <NotFound />;
    const { title, location, tags, host, rating, description, equipments } =
      filteredLodging ;
-   if (!filteredLodging) return <NotFound />;
   return (
     <>
       <Header origin='home' />
