@@ -1,10 +1,17 @@
 import orangeStar from '../../assets/svg/orangestar.svg';
 import greystar from "../../assets/svg/greystar.svg"
 
-const Profile = () => {
+const Profile = ({host}) => {
   return (
-    <div>Profile</div>
-  )
+    <div className='host_profile'>
+      <p className='host_name'>{host.name}</p>
+      <img
+        className='host_img'
+        src={host.picture}
+        alt={`Propriétaire ${host.name}`}
+      />
+    </div>
+  );
 }
 const Ratings = (props) => {
    const starsNumber = [1, 2, 3, 4, 5];
