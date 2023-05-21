@@ -12,6 +12,7 @@
   margin-right: 10%;
   /*margin-bottom: 100px;*/
   padding: 40px ;
+  transition: all .2s ease-in-out;
 
   
 }
