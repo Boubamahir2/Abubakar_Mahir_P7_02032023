@@ -1,13 +1,11 @@
 ._header {
-  width: 90%;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 10%;
+  padding-right: 10%;
   margin-top: 30px;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 .header_container {
-  width: 95%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,35 +14,31 @@
 .header_logo {
   width: 210.32px;
   height: 68px;
-  padding-left: 80px;
+}
+
+.header_nav{
+  display: flex;
+  text-decoration: none;
+  list-style: none;
 }
 
 .header_nav {
-  padding-right: 6%;
+  padding: 10px
+}
+.header_nav li:first-child {
+  margin-right: 30px;
 }
 
-.header_nav_empty {
+
+.header_nav_empty ,.header_nav_underline{
   color: #FF6060;
   text-decoration: none;
-  font-size: 24px;
+  font-size: 30px;
   font-family: 'Montserrat';
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 10px;
+  padding: 10px;
   border-bottom: 2px solid transparent
 }
 
-.header_nav_underline {
-  color: #FF6060;
-  text-decoration: none;
-  font-size: 24px;
-  font-family: 'Montserrat';
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-bottom: 10px;
-  border-bottom: 2px solid transparent
-}
-  
 .header_nav_empty:hover , .header_nav_underline:hover{
   border-bottom: 2px solid #FF6060
 }
@@ -52,7 +46,6 @@
 /* Smartphone styles */
 @media all and (max-width: 767px) {
   ._header {
-    margin-bottom: 30px;
     padding-left: 5%;
   }
 
@@ -65,9 +58,6 @@
     height: 40px;
   }
 
-  .header_container {
-    margin-left: -50px
-  }
 
   .header_nav {
     display: flex;

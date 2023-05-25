@@ -9,28 +9,32 @@ const Header = (props) => {
         <NavLink to='/'>
           <img className='header_logo' src={Logo} alt='Logo Kasa' />
         </NavLink>
-        <div className='header_nav'>
-          <NavLink
-            className={
-              props.origin === 'home'
-                ? 'header_nav_underline'
-                : 'header_nav_empty'
-            }
-            to='/'
-          >
-            Accueil
-          </NavLink>
-          <NavLink
-            className={
-              props.origin === 'about'
-                ? 'header_nav_underline'
-                : 'header_nav_empty'
-            }
-            to='/about'
-          >
-            A propos
-          </NavLink>
-        </div>
+        <ul className='header_nav'>
+          <li>
+            <NavLink
+              className={
+                props.origin === 'home'
+                  ? 'header_nav_underline'
+                  : 'header_nav_empty'
+              }
+              to='/'
+            >
+              Accueil
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={
+                props.origin === 'about'
+                  ? 'header_nav_underline'
+                  : 'header_nav_empty'
+              }
+              to='/about'
+            >
+              A propos
+            </NavLink>
+          </li>
+        </ul>
       </nav>
     </header>
   );
