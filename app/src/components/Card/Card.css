@@ -6,6 +6,7 @@
   background-color: #FF6060;
   color: #FFFFFF;
   margin-bottom: 55px;
+  cursor: pointer;
 }
 
 .card:before {
