@@ -29,7 +29,7 @@ const Lodging = () => {
         </div>
         <div className='section_details_host'>
           <div className='host'>
-            <Profile host={host} />
+            <Profile className='host_pro' host={host} />
             <div>
               <Ratings className='host_rating' rating={rating} />
             </div>

@@ -9,8 +9,6 @@
 .host {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  
 }
 
 .host_profile {
@@ -36,31 +34,31 @@
 /* Smartphone styles */
 @media all and (max-width: 767px) {
   .section_details_host {
-    margin-top: 1.5rem;
+    margin: 0;
+    width: 100%;
   }
 
   .host_profile {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin: 0;
+   
   }
 
   .host {
-    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
     align-items: center;
-  }
-
- 
-
-  .host_name {
-    margin-right: 20px;
-    margin-left: 140px;
   }
 
   .host_img {
     width: 48px;
     height: 48px;
   }
+
+    .host_name {
+    text-align: right;
+      margin-right: 10px;
+      font-size: 13px;
+    }
 
 }
