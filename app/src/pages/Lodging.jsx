@@ -1,13 +1,13 @@
 import React from "react";
 import { Navigate, useParams } from "react-router-dom";
-import Carousel from "../../components/Carousel";
-import Collapse from "../../components/Dropdown";
-import InfosAppart from "../../components/InfosAppart";
-import NotFound from "../NotFound";
+import Carousel from "../components/Carousel";
+import Collapse from "../components/Dropdown";
+import InfosAppart from "../components/InfosAppart";
+import NotFound from "./NotFound";
 
 function Lodging({ apparts }) {
-  const { logementId } = useParams();
-  const appart = apparts.find((appart) => appart.id === logementId);
+  const { id } = useParams();
+  const appart = apparts.find((appart) => appart.id === id);
 
   return appart ? (
     <div className="lodging">
