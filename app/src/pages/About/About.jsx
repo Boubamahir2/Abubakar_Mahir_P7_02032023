@@ -1,30 +1,22 @@
-import Header from '../../components/Header/Header';
-import Banner from '../../components/Banner/Banner';
-import Footer from '../../components/Footer/Footer';
-import Dropdown from '../../components/Dropdown/Dropdown'
-import data from '../../components/Dropdown/data.json';
-import  '../../components/Dropdown/Dropdown.css';
+import React from "react";
+import Banner from "../../components/Banner/Banner";
+import Dropdown from "../../components/Dropdown/Dropdown";
 
+function About({dataAbout}) {
+  const imageIndex = 2;
 
-const About = () => {
   return (
-    <div>
-      <Header origin='about' />
-      <main>
-        <Banner origin='about' />
-        <div className='mainDropdown'>
-          {data.map((item) => (
-            <Dropdown
-              key={item.id}
-              title={item.title}
-              text_content={item.text_content}
-            />
-          ))}
-        </div>
-      </main>
-      <Footer />
+    <div className="about">
+      <Banner imageSrc={`./banner${imageIndex}.jpg`}/>
+      <div className="otherInfo">
+        {
+          dataAbout.map((item, index) => (
+            <Dropdown key={index} title={item.title} content={item.description}/>
+          ))
+        }
+      </div>
     </div>
   );
-};
+}
 
 export default About;

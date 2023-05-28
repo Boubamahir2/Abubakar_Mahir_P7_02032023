@@ -1,63 +1,31 @@
-import './Lodging.css';
-import '../../components/Profile&Ratings/index.css';
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
-import Carousel from '../../components/Carousel/Carousel';
-import { useParams } from 'react-router-dom';
-import data from '../../data/restaurantsData.json'
-import NotFound from '../NotFound/NotFound';
-import Dropdown from '../../components/Dropdown/Dropdown';
-import {Profile,
-  Ratings,
-  HostTag} from '../../components/Profile&Ratings'
+import React from "react";
+import { Navigate, useParams } from "react-router-dom";
+import Carousel from "../../components/Carousel/Carousel";
+import Collapse from "../../components/Dropdown/Dropdown";
+import InfosAppart from "../../components/InfosAppart/InfosAppart";
+import NotFound from "../NotFound/NotFound";
 
-const Lodging = () => {
-  const {id} = useParams();
-  const filteredLodging = data.find(lodging => lodging.id === id);
-  if (!filteredLodging) return <NotFound />;
-   const { title, location, tags, host, rating, description, equipments } =
-     filteredLodging ;
-  return (
-    <>
-      <Header origin='home' />
-      <Carousel />
-      <div className='section_details'>
-        <div className='section_details_property'>
-          <h1 className='property_title'>{title}</h1>
-          <p className='property_location'>{location}</p>
-          <HostTag tags={tags} />
-        </div>
-        <div className='section_details_host'>
-          <div className='host'>
-            <Profile className='host_pro' host={host} />
-            <div>
-              <Ratings className='host_rating' rating={rating} />
-            </div>
-          </div>
-        </div>
+function Lodging({ apparts }) {
+  const { logementId } = useParams();
+  const appart = apparts.find((appart) => appart.id === logementId);
+
+  return appart ? (
+    <div className="lodging">
+      <Carousel carouselPictures={appart.pictures} />
+      <InfosAppart appart={appart} />
+      <div className="otherInfo">
+        <Collapse key={appart.id} title="Description" content={appart.description} />
+        <Collapse
+          title="Equipements"
+          content={appart.equipments.map((equi, index) => {
+            return <li key={index}>{equi}</li>;
+          })}
+        />
       </div>
-      <section className='dropdown_property'>
-        <div className='dropdown_property_banner'>
-          <Dropdown
-            className='dropdown_property_title'
-            key={filteredLodging.id}
-            title='Description'
-            text_content={description}
-          ></Dropdown>
-        </div>
-        <div className='dropdown_property_banner'>
-          <Dropdown
-            title='Equipements'
-            className='dropdown_property_title'
-            text_content={equipments?.map((equipment, index) => (
-              <li key={index}>{equipment}</li>
-            ))}
-          ></Dropdown>
-        </div>
-      </section>
-      <Footer />
-    </>
+    </div>
+  ) : (
+    <Navigate to="/error" replace={<NotFound />} />
   );
-};
+}
 
 export default Lodging;

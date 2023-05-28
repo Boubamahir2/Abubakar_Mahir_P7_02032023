@@ -1,66 +1,29 @@
-import './Carousel.css'
-import { useState } from 'react';
-import { useParams } from 'react-router-dom';
-import leftArrow from '../../assets/svg/left-arrow.svg';
-import rightArrow from '../../assets/svg/right-arrow.svg';
-import data from '../../data/restaurantsData.json';
+import React, { useState } from 'react'
+import leftArrow from '../../assets/images/svg/left-arrow.svg'
+import rightArrow from '../../assets/images/svg/right-arrow.svg'
 
-const Carousel = () => {
-  const [indexPic, setIndexPic] = useState(0);
+function Carousel({carouselPictures}) {
   
-  const { id } = useParams();
-  //récupération de l'id du logement dans les paramètres d'URL
-  const lodging = data.find((item) => item.id === id);
-  if (!lodging) {
-    return null;
+  const [indexPic, setIndexPic] = useState(0)
+
+  const incrementImage = () => {
+    setIndexPic((indexPic + 1) % carouselPictures.length);
   }
 
-   const { pictures } = lodging;
-      const nextPicture = () => {
-        setIndexPic((indexPic + 1) % pictures.length);
-      };
-
-      const prevPicture = () => {
-        setIndexPic(
-          (indexPic + pictures.length - 1) % pictures.length
-        );
-      };
-
+  const decrementImage = () => {
+    setIndexPic(
+      (indexPic + carouselPictures.length - 1) % carouselPictures.length
+    )
+  };
 
   return (
-    <section className='carousel'>
-      {pictures.length > 1 && (
-        <img
-          className='carousel_arrow_left'
-          src={leftArrow}
-          onClick={prevPicture}
-          alt='previous'
-        />
-      )}
-      <span className='carousel_index'>
-        {indexPic + 1} / {pictures.length}
-      </span>
-      {pictures.length > 1 && (
-        <img
-          className='carousel_arrow_right'
-          src={rightArrow}
-          onClick={nextPicture}
-          alt='next'
-        />
-      )}
-      {pictures.map((picture, index) => (
-        <div key={index}>
-          {index === indexPic && (
-            <img
-              className='carousel_img'
-              src={picture}
-              alt={picture.description}
-            />
-          )}
-        </div>
-      ))}
-    </section>
-  );
+    <div className='carousel'>
+       <img src={leftArrow} alt="left" className={(carouselPictures.length !== 1) ? "left-arrow" : "arrow-invisible"} onClick={decrementImage}/>
+       <img src={carouselPictures[indexPic]} alt="/" />
+       <p className='quantity'>{indexPic + 1} / {carouselPictures.length}</p>
+       <img src={rightArrow} alt="right" className={(carouselPictures.length !== 1) ? "right-arrow" : "arrow-invisible"} onClick={incrementImage}/>
+    </div>
+  )
 }
 
 export default Carousel

@@ -1,17 +1,17 @@
-import { useNavigate } from 'react-router-dom';
-import './Card.css'
+import React from "react";
+import { Link } from "react-router-dom";
 
-const Card = ({item}) => {
-   const navigate = useNavigate();
-   const handleCardClick = () => {
-     navigate(`/lodging/${item.id}`);
-   };
+function Card({appartId, appartTitle, appartCover }) {
+
+  
   return (
-    <article className="card" onClick={handleCardClick}>
-      <img className='card_img' src={item.cover} alt={item.title} />
-      <h2 className="card_title">{item.title}</h2>
-    </article>
+    <Link className="card" to={'../lodging/'+ appartId } >
+      <div className="cardImg">
+        <img src={appartCover} alt={appartTitle} />
+      </div>
+      <h4>{appartTitle}</h4>
+    </Link>
   );
-};
+}
 
 export default Card;

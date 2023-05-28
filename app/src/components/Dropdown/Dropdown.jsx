@@ -1,27 +1,37 @@
-import React,{useState} from 'react'
-import arrowDown from '../../assets/arrowDown.png';
-import arrowUp from '../../assets/arrowUp.png';
+import downArrow from "../../assets/images/svg/dow-arrow.svg";
+import React, { useState } from "react";
 
-const Dropdown = ({ title, text_content }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const Dropdown = ({id, title, content }) => {
+  const [isActive, setIsActive] = useState(true);
+
+  const displayContent = () => {
+    setIsActive(!isActive);
+  };
+
   return (
-    <div className='dropdown'>
-      <div className='dropdown_title_arrow'>
-        <h3 className='dropdown_title'>{title}</h3>
-        <img
-          className='dropdown_arrow'
-          src={isOpen ? arrowUp : arrowDown}
-          alt='flèche'
-          onClick={() => setIsOpen(!isOpen)}
-        />
-      </div>
-      {isOpen && (
-        <div>
-          <p className='dropdown_content'>{text_content}</p>
+    <>
+      <div key={id} className="accordion">
+        <div className="accordion__header">
+          <h3>{title}</h3>
+          <img
+            src={downArrow}
+            alt=""
+            onClick={displayContent}
+            className={isActive ? "rotate" : ""}
+          />
         </div>
-      )}
-    </div>
+        {!isActive ? (
+          <div className="accordion__contentDisplay">
+            <p>{content}</p>
+          </div>
+        ) : (
+          <div className="accordion__content">
+            <p>{content}</p>
+          </div>
+        )}
+      </div>
+    </>
   );
 };
 
-export default Dropdown
+export default Dropdown;
