@@ -8,8 +8,6 @@ import apparts from "./assets/datas/appartements.json"
 import dataAbout from "./assets/datas/aboutData.json"
 
 function App() {
-
-
   return (
     <Routes>
       <Route element={<Layout />}>
