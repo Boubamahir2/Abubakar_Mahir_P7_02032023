@@ -1,13 +1,12 @@
 import React from "react";
-import Banner from "../../components/Banner/Banner";
+import Banner from "../../components/Banner";
 import Dropdown from "../../components/Dropdown/Dropdown";
 
 function About({dataAbout}) {
-  const imageIndex = 2;
 
   return (
     <div className="about">
-      <Banner imageSrc={`./banner${imageIndex}.jpg`}/>
+      <Banner origin='about'/>
       <div className="otherInfo">
         {
           dataAbout.map((item, index) => (

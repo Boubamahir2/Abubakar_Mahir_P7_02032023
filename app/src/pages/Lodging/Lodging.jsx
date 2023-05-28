@@ -1,8 +1,8 @@
 import React from "react";
 import { Navigate, useParams } from "react-router-dom";
-import Carousel from "../../components/Carousel/Carousel";
-import Collapse from "../../components/Dropdown/Dropdown";
-import InfosAppart from "../../components/InfosAppart/InfosAppart";
+import Carousel from "../../components/Carousel";
+import Collapse from "../../components/Dropdown";
+import InfosAppart from "../../components/InfosAppart";
 import NotFound from "../NotFound/NotFound";
 
 function Lodging({ apparts }) {

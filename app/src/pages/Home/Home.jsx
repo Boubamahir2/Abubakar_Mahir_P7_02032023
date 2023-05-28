@@ -1,5 +1,5 @@
-import Banner from "../../components/Banner/Banner";
-import Card from "../../components/Card/Card";
+import Banner from "../../components/Banner";
+import Card from "../../components/Card";
 
 
 function Home({apparts}) {
