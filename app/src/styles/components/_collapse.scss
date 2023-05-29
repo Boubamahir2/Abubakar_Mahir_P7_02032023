@@ -23,7 +23,9 @@
             padding: 5px 12px;
         }       
         img {
-            width: 23px;
+            width: 24px;
+            cursor: pointer;
+            padding: 1px;
             height: 14px;
             font-weight: 500;
             @media screen and (max-width:960px) {
