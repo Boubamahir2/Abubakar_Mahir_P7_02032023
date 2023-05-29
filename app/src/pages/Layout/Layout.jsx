@@ -1,7 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import Footer from '../components/Layouts/Footer'
-import Header from '../components/Layouts/Header'
+import Footer from '../../components/Footer/Footer'
+import Header from '../../components/Header/Header'
 
 // The JSX code consists of three components: Header, Outlet, and Footer.
 // <Header /> represents the rendering of the Header component.

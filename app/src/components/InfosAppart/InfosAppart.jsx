@@ -1,6 +1,6 @@
 import React from "react";
-import Stars from "./Rating";
-import Tag from "./Tag";
+import Stars from "../Rating/Rating";
+import Tag from "../Tag/Tag";
 
 function InfosAppart({ appart }) {
   return (
