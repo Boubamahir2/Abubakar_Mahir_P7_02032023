@@ -3,7 +3,8 @@ import React, { useState } from "react";
 
 const Dropdown = ({id, title, content }) => {
   const [isActive, setIsActive] = useState(true);
-
+//   La fonction displayContent est définie pour inverser la valeur de isActive en utilisant la fonction setIsActive. Lorsque cette fonction est appelée, elle exécute setIsActive(!isActive), ce qui inverse la valeur actuelle de isActive. Si isActive était true, elle devient false, et vice versa.
+// En résumé, lorsque displayContent est appelée, elle change l'état de isActive
   const displayContent = () => {
     setIsActive(!isActive);
   };

@@ -10,9 +10,7 @@ function Home({apparts}) {
         {apparts.map((appart) => (
           <Card
             key={appart.id}
-            appartId={appart.id}
-            appartTitle={appart.title}
-            appartCover={appart.cover}
+            appart={appart}
           />
         ))}
       </div>
