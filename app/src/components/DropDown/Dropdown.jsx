@@ -1,5 +1,5 @@
-import downArrow from "../assets/images/svg/dow-arrow.svg";
-import upArrow from "../assets/images/svg/up-arrow.svg";
+import downArrow from "../../assets/images/svg/dow-arrow.svg";
+import upArrow from "../../assets/images/svg/up-arrow.svg";
 import React, { useState } from "react";
 
 const Dropdown = ({id, title, content }) => {

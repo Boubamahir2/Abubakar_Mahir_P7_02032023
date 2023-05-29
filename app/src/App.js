@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Lodging from "./pages/Lodging";
-import NotFound from "./pages/NotFound";
-import Layout from "./pages/Layout";
+import Home from "./pages/Home/Home";
+import About from "./pages/About/About";
+import Lodging from "./pages/Lodging/Lodging";
+import NotFound from "./pages/NotFound/NotFound";
+import Layout from "./pages/Layout/Layout";
 import apparts from "./assets/data/appartements.json"
 import dataAbout from "./assets/data/aboutData.json"
 

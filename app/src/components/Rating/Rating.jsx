@@ -1,5 +1,5 @@
-import star from "../assets/images/svg/orangestar.svg"
-import greystar from "../assets/images/svg/greystar.svg"
+import star from "../../assets/images/svg/orangestar.svg"
+import greystar from "../../assets/images/svg/greystar.svg"
 
 function Stars({rating}) {
     const numbers = [1, 2, 3, 4, 5];

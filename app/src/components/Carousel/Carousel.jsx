@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import leftArrow from '../assets/images/svg/left-arrow.svg'
-import rightArrow from '../assets/images/svg/right-arrow.svg'
+import leftArrow from '../../assets/images/svg/left-arrow.svg'
+import rightArrow from '../../assets/images/svg/right-arrow.svg'
 
 // ici nous définissons la fonction Carousel qui prend un argument carouselPictures. carouselPictures est un tableau d'images qui représente les images du carrousel.
 function Carousel({carouselPictures}) {
