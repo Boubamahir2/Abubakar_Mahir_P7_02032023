@@ -1,4 +1,5 @@
 import downArrow from "../assets/images/svg/dow-arrow.svg";
+import upArrow from "../assets/images/svg/up-arrow.svg";
 import React, { useState } from "react";
 
 const Dropdown = ({id, title, content }) => {
@@ -15,10 +16,9 @@ const Dropdown = ({id, title, content }) => {
         <div className="accordion__header">
           <h3>{title}</h3>
           <img
-            src={downArrow}
+            src={isActive ? downArrow : upArrow}
             alt=""
             onClick={displayContent}
-            className={isActive ? "rotate" : ""}
           />
         </div>
         {!isActive ? (

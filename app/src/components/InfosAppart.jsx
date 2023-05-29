@@ -3,7 +3,6 @@ import Stars from "./Rating";
 import Tag from "./Tag";
 
 function InfosAppart({ appart }) {
-  console.log(appart);
   return (
     <div className="info">
       <div className="left">
