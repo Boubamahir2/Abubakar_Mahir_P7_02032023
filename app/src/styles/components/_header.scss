@@ -12,7 +12,8 @@ header {
   }
   .logo {
     width: 125px;
-    height: 37px;@media screen and (min-width: 320px) {
+    height: 37px;
+    @media screen and (min-width: 320px) {
       width: 145px;
       height: 47px;
     }
@@ -30,7 +31,7 @@ header {
       align-items: center;
       gap: 10px;
       @media screen and (min-width: 768px) {
-        gap: 37px;
+        gap: 30px;
       }
       a {
         font-size: 10px;
@@ -42,10 +43,12 @@ header {
         }
         @media screen and (min-width: 320px) {
           font-size: 12px;
+          
           text-transform: none;
         }
         @media screen and (min-width: 768px) {
           font-size: 24px;
+          padding: 5px ;
           text-transform: none;
           font-weight: 500;
         }
