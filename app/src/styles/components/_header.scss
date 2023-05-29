@@ -30,12 +30,16 @@ header {
       align-items: center;
       gap: 10px;
       @media screen and (min-width: 768px) {
-        gap: 57px;
+        gap: 37px;
       }
       a {
         font-size: 10px;
         text-transform: uppercase;
         color: $mainColor;
+        padding: 10px ;
+        &:hover{
+          border-bottom: 2px solid $mainColor;
+        }
         @media screen and (min-width: 320px) {
           font-size: 12px;
           text-transform: none;
@@ -43,11 +47,9 @@ header {
         @media screen and (min-width: 768px) {
           font-size: 24px;
           text-transform: none;
+          font-weight: 500;
         }
       }
-    }
-    .active-link {
-        text-decoration: underline;
     }
   }
 }
